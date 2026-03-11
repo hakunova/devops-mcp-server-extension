@@ -394,7 +394,7 @@ export const ActivityRelatedResourceSchema = z.object({
 export const WorkItemActivitySchema = z.object({
   actionType: z.string().nullable().optional().describe("action 类型，可选值为: created, updated, delete, associate, unassociate 分别对应: 创建，更新，删除，关联和解除关联的 action"),
   eventId: z.number().int().nullable().optional().describe("事件id"),
-  eventTime: z.string().nullable().optional().describe("事件发生时间"),
+  eventTime: z.union([z.string(), z.number()]).nullable().optional().describe("事件发生时间"),
   eventType: z.string().nullable().optional().describe("事件类型，可选值为: workitem.created, workitem.updated, workitem.transitioned, workitem.association.changed， workitem.attachment.changed 分别对应工作项创建，工作项更新，工作项状态流转，工作项附件变更，工作项关联项变更"),
   newValue: z.array(ActivityValueSchema).nullable().optional().describe("更新后的值，可以为空"),
   oldValue: z.array(ActivityValueSchema).nullable().optional().describe("更新前的值，可以为空"),
@@ -451,7 +451,7 @@ export const GetWorkitemFileSchema = z.object({
 
 // Work item relation related schemas
 export const WorkItemRelationRecordSchema = z.object({
-  gmtCreate: z.string().nullable().optional().describe("创建关联的时间"),
+  gmtCreate: z.union([z.string(), z.number()]).nullable().optional().describe("创建关联的时间"),
   id: z.string().nullable().optional().describe("关联详细的id"),
   relationType: z.string().nullable().optional().describe("关联的类型，可选值为 PARENT、SUB、ASSOCIATED、DEPEND_ON、DEPENDED_BY，分别对应父项、子项、关联项、依赖项、支撑项"),
   resourceId: z.string().nullable().optional().describe("关联的资源id"),

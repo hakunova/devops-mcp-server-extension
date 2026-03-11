@@ -1101,7 +1101,7 @@ export async function createWorkitemRelationRecordFunc(
 
   const payload = {
     relationType: relationType,
-    workitemId: relatedWorkitemId
+    workItemId: relatedWorkitemId
   };
 
   const response = await yunxiaoRequest(url, {
@@ -1137,7 +1137,7 @@ export async function deleteWorkitemRelationRecordFunc(
 
   const payload = {
     relationType: relationType,
-    workitemId: relatedWorkitemId
+    workItemId: relatedWorkitemId
   };
 
   await yunxiaoRequest(url, {
