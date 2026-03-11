@@ -1,0 +1,8 @@
+{
+  "name": "devops-mcp-server-extension",
+  "command": "node",
+  "args": ["dist/index.js"],
+  "env": {
+    "YUNXIAO_ACCESS_TOKEN": "<YOUR_TOKEN>"
+  }
+}

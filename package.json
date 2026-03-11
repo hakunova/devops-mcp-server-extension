@@ -1,0 +1,52 @@
+{
+  "name": "devops-mcp-server-extension",
+  "version": "1.0.0",
+  "description": "MCP Server extension for AlibabaCloud DevOps API with enhanced features. Based on alibabacloud-devops-mcp-server with additional tools and improvements.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": {
+    "name": "hakunova",
+    "email": "scarecrow.wilderness@gmail.com",
+    "url": "https://github.com/hakunova/devops-mcp-server-extension"
+  },
+  "homepage": "https://github.com/hakunova/devops-mcp-server-extension",
+  "bin": {
+    "devops-mcp-server-extension": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hakunova/devops-mcp-server-extension.git"
+  },
+  "keywords": [
+    "devops",
+    "mcp",
+    "ai",
+    "open api",
+    "devops-mcp",
+    "yunxiao",
+    "alibaba-cloud"
+  ],
+  "scripts": {
+    "build": "tsc && shx chmod +x dist/*.js",
+    "watch": "tsc --watch",
+    "start": "node dist/index.js",
+    "start:sse": "node dist/index.js --sse"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.18.2",
+    "universal-user-agent": "^7.0.0",
+    "zod": "^3.22.4",
+    "zod-to-json-schema": "^3.22.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^20.10.5",
+    "shx": "^0.3.4",
+    "typescript": "^5.8.2"
+  }
+}
